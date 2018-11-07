@@ -51,13 +51,10 @@
             <li class="nav-item">
                 <a  class="nav-link mx-4" asp-area="" asp-controller="Campaña" asp-action="AgregarCampanas">Agregar campañas</a>
             </li>
-            <li class="nav-item">
-                <a  class="nav-link mx-4" asp-area="" asp-controller="Campaña" asp-action="Donaciones">Donaciones</a>
-            </li>
             </ul>
             <form class="form-inline">
-                <button class="btn btn-outline-primary ml-5 mt-2" type="submit">Iniciar sesion</button>
-                <button class="btn btn-outline-primary ml-4 mt-2" type="submit">Registrarse</button>
+                <button asp-controller="Campaña" asp-action="InicioSesion" class="btn btn-outline-primary ml-5 mt-2" type="submit">Iniciar sesion</button>
+                <button asp-controller="Campaña" asp-action="RegistroUsuario" class="btn btn-outline-primary ml-4 mt-2" type="submit">Registrarse</button>
             </form>
         </div>
         </nav>

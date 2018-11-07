@@ -1,19 +1,23 @@
+@model Campaña
+
+@Html.ValidationSummary()
+
 <div class="container">
     <div class="row">
         <div class="col-md-8" class="border">
             <form asp-action="AgregarCampanas" method="post">
                 <div class="form-group">
                     <label>Nombre de la Campaña:</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" asp-for="Nombre" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Informacion sobre la Campaña</label>
-                    <textarea class="form-control"  rows="3"></textarea>
+                    <textarea class="form-control" asp-for="informacion" rows="3"></textarea>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-4">
                     <label>Distrito a realizarse</label>
-                    <select multiple class="form-control" >
+                    <select asp-for="distrito" multiple class="form-control" >
                         <option>Lima</option>
                         <option>Miraflores</option>
                         <option>Surco</option>
@@ -24,7 +28,7 @@
                     </div>
                     <div class="form-group col-4">
                         <label>Cantidad de personas</label>
-                        <select multiple class="form-control" >
+                        <select  asp-for="CantidadPersonas" multiple class="form-control" >
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -45,7 +49,7 @@
                 </div>
                 <div class="form-group">
                     <label>Implementos a llevar</label>
-                    <textarea class="form-control"  rows="3"></textarea>
+                    <textarea asp-for="implementos" class="form-control"  rows="3"></textarea>
                 </div>
                 
                 <div class="form-check form-check-inline">

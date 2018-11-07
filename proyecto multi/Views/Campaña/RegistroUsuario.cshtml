@@ -1,0 +1,45 @@
+@model usuario
+@Html.ValidationSummary()
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" class="border">
+            <form asp-action="RegistroUsuario" method="post">
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" asp-for="Nombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input class="form-control" asp-for="Apellido"/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                    <label>Edad</label>
+                    <input  asp-for="Edad" class="form-control" />
+                    </div>
+                    <div class="form-group col-4">
+                         <label>Celular</label>
+                         <input type="text" asp-for="celular" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="text" asp-for="Contraseña" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input  asp-for="Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Distrito</label>
+                   <input type="text" asp-for="distrito" class="form-control" />
+                </div>
+              
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+        <div class="col-md-2" class="border">
+            <p>efsf</p>
+        </div>
+    </div>
+</div>

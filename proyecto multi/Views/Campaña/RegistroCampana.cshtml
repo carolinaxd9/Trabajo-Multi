@@ -1,7 +1,8 @@
+@model Campaña
 <div class="container">
     <div class="row">
         <div class="col-md-8" class="border">
-            <h2>sdklsad</h2>
+            <h2>@Model.Nombre</h2>
              <div class="media">
                     <img class="mr-3" src="http://4.bp.blogspot.com/_pItrP-VD91k/TN7VOeka6iI/AAAAAAAAADI/wTjh4Y_hF8Q/s1600/avatar.jpg " style="width:28%"/>
                     <div class="media-body">
@@ -12,9 +13,11 @@
             <h4>Implementos a llevar</h4>
             <p>dadasdfafsfa</p>
             <form asp-action="RegistroCampana" method="post">
+                <input type="hidden" name="cid" value="@Model.CampañaId"/>
+
                 <div class="form-group">
                     <label>Numero de contacto</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" name="monto"/>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" >
