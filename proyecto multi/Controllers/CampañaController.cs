@@ -28,5 +28,8 @@ namespace proyecto_multi.Controllers
         public IActionResult RegistroCampana(){
            return View();
         } 
+        public IActionResult Donaciones(){
+           return View();
+        } 
     }
 }

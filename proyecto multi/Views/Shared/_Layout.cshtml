@@ -10,33 +10,58 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        
     </environment>
+    <style> 
+        body {
+            background-color: #cccccc;
+        }
+    </style>
+    <div class="container">
+        <div class="text-center mb-4" style="margin-top:-26px">
+            <img src="http://oga.bogota.unal.edu.co/masivos/campamb.png"style="width:28%"  />
+        </div>
+    </div>
+    
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+   <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SOSTENIBILIDAD </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">proyecto_multi</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Campaña" asp-action="ListaCampana">Lista de campañas</a></li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link mx-4" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-4" asp-area="" asp-controller="Home" asp-action="About">Noticia</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link mx-4" asp-area="" asp-controller="Campaña" asp-action="ListaCampana">Campañas a realizarse</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link mx-4" asp-area="" asp-controller="Campaña" asp-action="AgregarCampanas">Agregar campañas</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link mx-4" asp-area="" asp-controller="Campaña" asp-action="Donaciones">Donaciones</a>
+            </li>
+            </ul>
+            <form class="form-inline">
+                <button class="btn btn-outline-primary ml-5 mt-2" type="submit">Iniciar sesion</button>
+                <button class="btn btn-outline-primary ml-4 mt-2" type="submit">Registrarse</button>
+            </form>
         </div>
-    </nav>
+        </nav>
+    </div>
 
     <partial name="_CookieConsentPartial" />
 
