@@ -10,27 +10,15 @@ namespace proyecto_multi.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Inicio()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Noticias()
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
             return View();
         }
 
