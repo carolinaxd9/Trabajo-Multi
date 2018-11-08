@@ -13,8 +13,7 @@ namespace proyecto_multi.Models
         public string distrito { get; set; }
         [Required]
         public int CantidadPersonas { get; set; }
-        public string distrito_pro { get; set; }
-        public int edad_min { get; set; }
+        public string foto { get; set; }
         public string implementos { get; set; }
         public List<camp_usuario> camp_usuarios{get;set;}
     }

@@ -51,8 +51,6 @@ namespace proyecto_multi.Controllers
             var cu=new camp_usuario();
             cu.CampañaId=cid;
             cu.UsuarioId=HttpContext.Session.GetInt32("uid").Value;
-
-
             cu.montoDonacion=monto;
             _context.Add(cu);
             _context.SaveChanges();
@@ -89,8 +87,14 @@ namespace proyecto_multi.Controllers
             return View();
         }
 
-        public IActionResult InicioSesion(){
+        [HttpPost]
+        public IActionResult InicioSesion(usuario a){
+
             HttpContext.Session.SetInt32("uid",5);
+            return View();
+        }
+
+         public IActionResult InicioSesion(){
             return View();
         }
         

@@ -4,19 +4,18 @@
         <div class="col-md-8" class="border">
             <h2>@Model.Nombre</h2>
              <div class="media">
-                    <img class="mr-3" src="http://4.bp.blogspot.com/_pItrP-VD91k/TN7VOeka6iI/AAAAAAAAADI/wTjh4Y_hF8Q/s1600/avatar.jpg " style="width:28%"/>
+                    <img class="mr-3" src="@Model.foto" style="width:28%"/>
                     <div class="media-body">
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum
-                    in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <p>@Model.informacion</p>
                 </div>
             </div>
             <h4>Implementos a llevar</h4>
-            <p>dadasdfafsfa</p>
+            <p>@Model.implementos</p>
             <form asp-action="RegistroCampana" method="post">
                 <input type="hidden" name="cid" value="@Model.CampañaId"/>
 
                 <div class="form-group">
-                    <label>Numero de contacto</label>
+                    <label>Monto a donar:</label>
                     <input type="text" class="form-control" name="monto"/>
                 </div>
                 <div class="form-check form-check-inline">
