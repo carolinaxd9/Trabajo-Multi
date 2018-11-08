@@ -20,7 +20,6 @@ namespace proyecto_multi.Controllers
 
         public IActionResult ListaCampana(){
             var Campanas=_context.Campaña.ToList();
-
            return View(Campanas);
         } 
 
@@ -88,10 +87,21 @@ namespace proyecto_multi.Controllers
         }
 
         [HttpPost]
-        public IActionResult InicioSesion(usuario a){
-
-            HttpContext.Session.SetInt32("uid",5);
-            return View();
+        public IActionResult InicioSesion(IniciarSesion i){
+            if (ModelState.IsValid)
+            {
+                var con=_context.usuario.FirstOrDefault(c=>c.Email==i.Correo);
+                
+                if(i.Correo==con.Email && i.Password == con.Contraseña)
+                {
+                    //codigo
+                    HttpContext.Session.SetInt32("uid",con.UsuarioId);
+                    return RedirectToAction("Inicio","Home");
+                }
+                ModelState.AddModelError("credencialInvalida", "los datos son incorrectos");    
+            }
+            
+            return View(i);
         }
 
          public IActionResult InicioSesion(){
