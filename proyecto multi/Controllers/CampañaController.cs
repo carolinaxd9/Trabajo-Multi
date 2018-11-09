@@ -17,12 +17,13 @@ namespace proyecto_multi.Controllers
             this._context = context;
 
         }
-
+        //listar todas las campañas
         public IActionResult ListaCampana(){
             var Campanas=_context.Campaña.ToList();
            return View(Campanas);
         } 
 
+        //Agregar campañas
         public IActionResult AgregarCampanas(){
             return View();
         } 
@@ -40,6 +41,12 @@ namespace proyecto_multi.Controllers
             return View(b);
         } 
 
+        public IActionResult AgregarCampañaConfirmacion()
+        {
+            return View();
+        }
+
+        //registrarse en las campañas
         public IActionResult RegistroCampana(int id){
             var campaña=_context.Campaña.FirstOrDefault(c=>c.CampañaId==id);
             return View(campaña);
@@ -57,14 +64,12 @@ namespace proyecto_multi.Controllers
             return RedirectToAction("RegistroCampañaConfirmacion");
         } 
 
-        public IActionResult AgregarCampañaConfirmacion()
-        {
-            return View();
-        }
         public IActionResult RegistroCampañaConfirmacion()
         {
             return View();
         }
+
+        //Usuario
         public IActionResult RegistroUsuario(){
             return View();
         }
@@ -86,6 +91,11 @@ namespace proyecto_multi.Controllers
             return View();
         }
 
+        //Iniciar sesion
+        public IActionResult InicioSesion(){
+            return View();
+        }
+        
         [HttpPost]
         public IActionResult InicioSesion(IniciarSesion i){
             if (ModelState.IsValid)
@@ -102,10 +112,6 @@ namespace proyecto_multi.Controllers
             }
             
             return View(i);
-        }
-
-         public IActionResult InicioSesion(){
-            return View();
         }
         
     }
