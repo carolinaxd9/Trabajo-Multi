@@ -52,17 +52,6 @@ namespace proyecto_multi.Controllers
             return View(campaña);
         } 
 
-        [HttpPost]
-        public IActionResult RegistroCampana(int cid,int monto){
-            var cu=new camp_usuario();
-            cu.CampañaId=cid;
-            cu.UsuarioId=HttpContext.Session.GetInt32("uid").Value;
-            cu.montoDonacion=monto;
-            _context.Add(cu);
-            _context.SaveChanges();
-
-            return RedirectToAction("RegistroCampañaConfirmacion");
-        } 
 
         public IActionResult RegistroCampañaConfirmacion()
         {
@@ -95,7 +84,7 @@ namespace proyecto_multi.Controllers
         public IActionResult InicioSesion(){
             return View();
         }
-        
+
         [HttpPost]
         public IActionResult InicioSesion(IniciarSesion i){
             if (ModelState.IsValid)
@@ -105,7 +94,7 @@ namespace proyecto_multi.Controllers
                 if(i.Correo==con.Email && i.Password == con.Contraseña)
                 {
                     //codigo
-                    HttpContext.Session.SetInt32("uid",con.UsuarioId);
+                    HttpContext.Session.SetInt32("uid",con.UsuarioId);//
                     return RedirectToAction("Inicio","Home");
                 }
                 ModelState.AddModelError("credencialInvalida", "los datos son incorrectos");    
@@ -113,6 +102,16 @@ namespace proyecto_multi.Controllers
             
             return View(i);
         }
-        
+        [HttpPost]
+        public IActionResult RegistroCampana(int cid,int monto){
+            var cu=new camp_usuario();
+            cu.CampañaId=cid;
+            cu.UsuarioId=HttpContext.Session.GetInt32("uid").Value;//
+            cu.montoDonacion=monto;
+            _context.Add(cu);
+            _context.SaveChanges();
+
+            return RedirectToAction("RegistroCampañaConfirmacion");
+        } 
     }
 }
