@@ -89,18 +89,21 @@ namespace proyecto_multi.Controllers
         public IActionResult InicioSesion(IniciarSesion i){
             if (ModelState.IsValid)
             {
-                var con=_context.usuario.FirstOrDefault(c=>c.Email==i.Correo);
+               
+                var con=_context.usuario.FirstOrDefault(c=>c.Email==i.Correo && c.Contraseña==i.Password);
                 
-                if(i.Correo==con.Email && i.Password == con.Contraseña)
+                if(con==null){
+                    ModelState.AddModelError("credencialInvalida", "los datos son incorrectos"); 
+                }
+                else if(i.Correo==con.Email && i.Password ==con.Contraseña)
                 {
                     //codigo
                     HttpContext.Session.SetInt32("uid",con.UsuarioId);//
                     return RedirectToAction("Inicio","Home");
                 }
-                ModelState.AddModelError("credencialInvalida", "los datos son incorrectos");    
+                  
             }
-            
-            return View(i);
+            return View("InicioSesion",i);
         }
         [HttpPost]
         public IActionResult RegistroCampana(int cid,int monto){
