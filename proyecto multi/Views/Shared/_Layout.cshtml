@@ -7,7 +7,8 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/site.css" />
+        
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -20,18 +21,18 @@
     </environment>
     <style> 
         body {
-            background-color: #cccccc;
+            background-image:url("https://previews.123rf.com/images/goodze/goodze1604/goodze160400113/55677544-abstract-background-of-route-and-journey-amidst-the-big-tree-and-beautiful-nature.jpg");
         }
     </style>
-    <div class="container">
-        <div class="text-center mb-4" style="margin-top:-26px">
+    <div class="container bg-light">
+        <div class="text-center my-4">
             <img src="http://oga.bogota.unal.edu.co/masivos/campamb.png"style="width:28%"  />
         </div>
     </div>
     
 </head>
 <body>
-   <div class="container">
+   <div class="container bg-light">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Inicio">SOSTENIBILIDAD </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,16 +59,17 @@
             </form>
         </div>
         </nav>
-    </div>
+    
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
+        <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; 2018 - proyecto_multi</p>
         </footer>
+    </div>
     </div>
 
     <environment include="Development">

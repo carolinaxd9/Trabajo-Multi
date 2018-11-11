@@ -1,7 +1,7 @@
 @model Campaña
 <div class="container">
     <div class="row">
-        <div class="col-md-8" class="border">
+        <div class="col-7">
             <h2>@Model.Nombre</h2>
              <div class="media">
                     <img class="mr-3" src="@Model.foto" style="width:28%"/>
@@ -12,18 +12,23 @@
             <h4>Implementos a llevar</h4>
             <p>@Model.implementos</p>
             <form asp-action="RegistroCampana" method="post">
-                <input type="hidden" name="cid" value="@Model.CampañaId"/>
-
+            <input type="hidden" name="cid" value="@Model.CampañaId"/>
+            <div class="col-3">
                 <div class="form-group">
                     <label>Monto a donar:</label>
-                    <input type="text" class="form-control" name="monto"/>
+                    <input class="form-control" name="monto"/>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" >
-                    <label class="form-check-label" >Aceptar los terminos de Sostenibilidad Emprendedora</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me">Aceptar los terminos de Sostenibilidad Emprendedora
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
             </form>
+        </div>
+        <div class="col-3">
+           
         </div>
     </div>
 </div>

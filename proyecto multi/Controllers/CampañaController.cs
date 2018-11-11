@@ -95,9 +95,7 @@ namespace proyecto_multi.Controllers
                 if(con==null){
                     ModelState.AddModelError("credencialInvalida", "los datos son incorrectos"); 
                 }
-                else if(i.Correo==con.Email && i.Password ==con.Contraseña)
-                {
-                    //codigo
+                else if(i.Correo==con.Email && i.Password ==con.Contraseña){
                     HttpContext.Session.SetInt32("uid",con.UsuarioId);//
                     return RedirectToAction("Inicio","Home");
                 }

@@ -1,8 +1,11 @@
 @model usuario
 @Html.ValidationSummary()
+@{
+    ViewData["Title"] = "Registro de Usuario";
+}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-7">
             <form asp-action="RegistroUsuario" method="post">
                 <div class="form-group">
                     <label>Nombre:</label>
@@ -28,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
-                    <input type="text" asp-for="Contraseña" class="form-control" />
+                    <input type="password" asp-for="Contraseña" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Distrito</label>
@@ -38,8 +41,8 @@
                 <button type="submit" class="btn btn-primary" >Registrar</button>
             </form>
         </div>
-        <div class="col-md-2" class="border">
-            <p>efsf</p>
+        <div class="col-3">
+           <img src="https://clinicajosemaria.com.br/wp-content/uploads/2017/05/atendimento.png" class="w-100"/>
         </div>
     </div>
 </div>
