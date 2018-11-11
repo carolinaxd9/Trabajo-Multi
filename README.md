@@ -1,2 +1,5 @@
 # Trabajo-Multi
-Pagina sobre la contaminacion ambiental
+• Nombre del proyecto
+• Descripción del proyecto
+• Autores
+• Manual de instalación y uso
